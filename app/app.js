@@ -62,7 +62,7 @@ function renderHero() {
   const next = trophies.find((t) => t.id !== 1 && !earned.has(t.id));
   $('#heroNote').textContent = left === 0
     ? 'Platinum earned — Vice Got a Price! is yours.'
-    : `${left} to go — next: ${next ? next.name : ''}. Roadmap: story → strangers → activities → collectibles → crime cleanup.`;
+    : `${left} to go — next: ${next ? (isHidden(next) ? `Hidden story trophy #${next.id}` : next.name) : ''}. Roadmap: story → strangers → activities → collectibles → crime cleanup.`;
   $('#gradeChips').innerHTML = ['platinum', 'gold', 'silver', 'bronze'].map((g) =>
     `<div class="gchip ${g}"><b>${gradeEarned(g)} / ${gradeCount(g)}</b>${GRADE_LABEL[g]}</div>`).join('')
     + `<div class="gchip"><b>${trophies.filter((t) => t.missable && earned.has(t.id)).length} / 9</b>Missable done</div>`;
@@ -101,7 +101,7 @@ function renderList() {
     if (selected === t.id) li.classList.add('selected');
     const box = document.createElement('input');
     box.type = 'checkbox'; box.checked = earned.has(t.id);
-    box.setAttribute('aria-label', `Mark ${t.name} earned`);
+    box.setAttribute('aria-label', `Mark ${isHidden(t) ? `Hidden story trophy #${t.id}` : t.name} earned`);
     box.addEventListener('change', (e) => { e.stopPropagation(); toggleEarned(t.id); });
     const hidden = isHidden(t);
     const mid = document.createElement('div');
@@ -193,8 +193,8 @@ function renderRoadmap() {
       const li = document.createElement('li');
       if (earned.has(t.id)) li.classList.add('done');
       const nm = document.createElement('span'); nm.className = 'pname';
-      nm.textContent = `${t.missable ? '⚠ ' : ''}${t.id}. ${t.name} [${t.grade}]`;
-      const kf = document.createElement('span'); kf.className = 'pkey'; kf.textContent = t.keyfact;
+      nm.textContent = isHidden(t) ? `⚠ Hidden story trophy #${t.id}` : `${t.missable ? '⚠ ' : ''}${t.id}. ${t.name} [${t.grade}]`;
+      const kf = document.createElement('span'); kf.className = 'pkey'; kf.textContent = isHidden(t) ? 'Story trophy — hidden until earned (spoiler-safe is ON).' : t.keyfact;
       li.append(nm, kf);
       li.addEventListener('click', () => { selected = t.id; showView('checklist'); });
       ul.append(li);
@@ -209,13 +209,14 @@ function renderMissables() {
   grid.replaceChildren();
   for (const t of trophies.filter((x) => x.missable)) {
     const card = document.createElement('div'); card.className = 'miss-card';
-    const h = document.createElement('h3'); h.textContent = `${t.id}. ${t.name} [${t.grade}]`;
+    const hidden = isHidden(t);
+    const h = document.createElement('h3'); h.textContent = hidden ? `Hidden story trophy #${t.id}` : `${t.id}. ${t.name} [${t.grade}]`;
     const r = document.createElement('p');
     r.innerHTML = `<b>Why it can be missed:</b> `;
-    r.append(document.createTextNode(t.missable_reason));
+    r.append(document.createTextNode(hidden ? 'Story trophy — hidden until earned (spoiler-safe is ON).' : t.missable_reason));
     const s = document.createElement('p'); s.className = 'save';
     s.innerHTML = `<b>Save to keep:</b> `;
-    s.append(document.createTextNode(t.save_advice));
+    s.append(document.createTextNode(hidden ? 'Hidden until earned (spoiler-safe is ON).' : t.save_advice));
     const m = document.createElement('p'); m.className = 'meta';
     m.textContent = `Phase ${t.phase} · ${earned.has(t.id) ? '✓ Earned' : 'Not earned yet'}`;
     card.append(h, r, s, m);
