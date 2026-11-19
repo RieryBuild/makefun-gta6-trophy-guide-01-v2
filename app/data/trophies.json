@@ -264,7 +264,7 @@
     {"s": "Exophase — GTA VI trophy list", "d": "2026-11-18", "c": "Official name, description & grade"},
     {"s": "PSNProfiles — GTA VI trophy list", "d": "2026-11-18", "c": "Cross-check of name, description & grade; count 42"}
    ],
-   "guide": "Earn a gold medal in all 42 Shooting Range challenges. This is the hardest pure-skill trophy in the set: learn each weapon's recoil and the target timing, then work the list one challenge at a time rather than in a single marathon — fatigue costs medals. Use Combat Focus practice from the story to steady your aim, and save your best attempts for when you are fresh. The count (42) is the PSN-tracked total in the list we cite."
+   "guide": "Earn a gold medal in all 42 Shooting Range challenges. This is a pure-skill test: learn each weapon's recoil and the target timing, then work the list one challenge at a time rather than in a single session. Practise each weapon's handling in free roam first, and save your best attempts for when you are fresh. The count (42) is the PSN-tracked total in the list we cite."
   },
   {
    "id": 18,
@@ -507,7 +507,7 @@
     {"s": "PSNProfiles — GTA VI trophy list", "d": "2026-11-18", "c": "Cross-check of name, description & grade"},
     {"s": "Vice Ledger roadmap — our reading of the official descriptions", "d": "2026-11-20", "c": "Partner-availability warning is our inference, not yet verified in-game"}
    ],
-   "guide": "Build a 4-star wanted level while your partner is with you, then lose the heat together. Do this the first time a partner is free in open world after a story beat — do not leave it for the endgame, when partners may no longer be around. Save first, raise the heat somewhere with open roads and cover, then break line of sight and stay hidden until the stars clear. The partner-availability warning is our inference from the description — not yet verified in-game."
+   "guide": "Build a 4-star wanted level while your partner is with you, then lose the heat together. Our reading is that partners may not be available late in the story, so do this the first time a partner is free in open world after a story beat — do not leave it for the endgame. Save first, raise the heat somewhere with open roads and cover, then break line of sight and stay hidden until the stars clear. The partner-availability warning is our inference from the description — not yet verified in-game."
   },
   {
    "id": 34,
@@ -525,7 +525,7 @@
     {"s": "PSNProfiles — GTA VI trophy list", "d": "2026-11-18", "c": "Cross-check of name, description & grade"},
     {"s": "Vice Ledger roadmap — our reading of the official descriptions", "d": "2026-11-20", "c": "Partner-availability warning is our inference, not yet verified in-game"}
    ],
-   "guide": "With your partner beside you, rob 3 shops back-to-back without losing your wanted level — the streak breaks if the heat clears between robberies. Scout three close-together shops first, plan the route, save, then run them in one chain and keep moving between each one. Attempt it in the same session as Hot Together, while a partner is available. That partner-availability warning is our inference from the description — not yet verified in-game."
+   "guide": "With your partner beside you, rob 3 shops back-to-back without losing your wanted level — the streak breaks if the heat clears between robberies. Scout three close-together shops first, plan the route, save, then run them in one chain and keep moving between each one. Attempt it in the same session as Hot Together, while a partner is available — our reading is that partners may not be available late in the story, which is our inference from the description, not yet verified in-game."
   },
   {
    "id": 35,
@@ -745,7 +745,7 @@
     {"s": "Exophase — GTA VI trophy list", "d": "2026-11-18", "c": "Official name, description & grade"},
     {"s": "PSNProfiles — GTA VI trophy list", "d": "2026-11-18", "c": "Cross-check of name, description & grade; PSN-tracked count 500"}
    ],
-   "guide": "Make choices — for better or worse — until the PSN-tracked counter reaches 500. Choices appear everywhere: dialogue picks, mission approaches, stranger decisions. Play naturally and the counter climbs; what matters is not to rush past choice moments without engaging them. Because some choices are one-time story beats, keep saves before branching missions so a missed choice is recoverable."
+   "guide": "Make choices — for better or worse — until the PSN-tracked counter reaches 500. Choices appear everywhere: dialogue picks, mission approaches, stranger decisions. Play naturally and the counter climbs; what matters is not to rush past choice moments without engaging them. Some choices may be one-time story beats — our inference from the description, not yet verified in-game — so keep saves before branching missions so a missed choice is recoverable."
   },
   {
    "id": 49,
