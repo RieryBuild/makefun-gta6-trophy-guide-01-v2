@@ -1,8 +1,8 @@
 # Vice Ledger — GTA VI Trophy Guide & Platinum Tracker
 
-[![GTA VI Trophy Guide](https://img.shields.io/badge/GTA%20VI-55%20trophies-0e6b6b)](https://make.fun/bounty/gta6-trophy-guide-01)
-[![Offline](https://img.shields.io/badge/offline-no%20network%20at%20runtime-c8501a)](https://make.fun/bounty/gta6-trophy-guide-01)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![make.fun · gta6-trophy-guide-01](https://make.fun/badge/gta6-trophy-guide-01.svg)](https://make.fun/bounty/gta6-trophy-guide-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
+[![rank](https://make.fun/badge/gta6-trophy-guide-01/RieryBuild/makefun-gta6-trophy-guide-01-v2/rank.svg)](https://make.fun/bounty/gta6-trophy-guide-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
+[![reward](https://make.fun/badge/gta6-trophy-guide-01/RieryBuild/makefun-gta6-trophy-guide-01-v2/reward.svg)](https://make.fun/bounty/gta6-trophy-guide-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
 
 An offline guide and tracker for the 55 PlayStation 5 trophies of **Grand Theft Auto VI** — built for the [make.fun bounty gta6-trophy-guide-01](https://make.fun/bounty/gta6-trophy-guide-01).
 
