@@ -7,7 +7,13 @@ const params = new URLSearchParams(location.search);
 const DEMO_EARNED = [2, 3, 4, 5, 6, 8, 15, 16, 21, 28, 35, 44, 53];
 
 const $ = (s) => document.querySelector(s);
-const doc = await (await fetch('data/trophies.json')).json();
+let doc;
+try {
+  doc = await (await fetch('data/trophies.json')).json();
+} catch (err) {
+  document.getElementById('detailPane').textContent = 'Could not load data/trophies.json — serve app/ over HTTP (node serve.ts) instead of opening the file directly.';
+  throw err;
+}
 const trophies = doc.trophies;
 const byId = new Map(trophies.map((t) => [t.id, t]));
 
@@ -113,7 +119,7 @@ function renderList() {
     tags.append(cat);
     if (t.missable) { const m = document.createElement('span'); m.className = 'tag miss'; m.textContent = '⚠ MISSABLE'; tags.append(m); }
     li.append(box, mid, tags);
-    li.addEventListener('click', () => { selected = t.id; renderAll(); });
+    li.addEventListener('click', (e) => { if (e.target === box) return; selected = t.id; renderAll(); });
     list.append(li);
   }
 }
@@ -281,16 +287,18 @@ function applySpoiler() {
 spoilerBtn.addEventListener('click', () => { spoiler = !spoiler; applySpoiler(); renderAll(); });
 
 $('#exportBtn').addEventListener('click', () => {
+  const url = URL.createObjectURL(new Blob([JSON.stringify({ game: 'GTA VI', earned: [...earned].sort((x, y) => x - y), exported: new Date().toISOString() }, null, 2)], { type: 'application/json' }));
   const a = document.createElement('a');
-  a.href = URL.createObjectURL(new Blob([JSON.stringify({ game: 'GTA VI', earned: [...earned].sort((x, y) => x - y), exported: new Date().toISOString() }, null, 2)], { type: 'application/json' }));
+  a.href = url;
   a.download = 'vice-ledger-progress.json'; a.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
 });
 $('#importFile').addEventListener('change', async (e) => {
   const file = e.target.files[0]; if (!file) return;
   try {
     const data = JSON.parse(await file.text());
     const ids = Array.isArray(data) ? data : data.earned;
-    earned = new Set(ids.filter((id) => byId.has(id)));
+    earned = new Set(ids.map(Number).filter((id) => byId.has(id)));
     save(); renderAll();
   } catch { alert('That file is not a valid Vice Ledger progress export.'); }
 });
