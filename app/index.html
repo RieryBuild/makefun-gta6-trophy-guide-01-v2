@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vice Ledger — GTA VI Trophy Guide &amp; Platinum Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="mast-left">
+    <div class="mark" aria-hidden="true">VI</div>
+    <div>
+      <h1>VICE LEDGER</h1>
+      <p class="sub">GTA VI — 55-trophy platinum guide &amp; tracker · Leonida · PS5 · offline</p>
+    </div>
+  </div>
+  <div class="mast-right">
+    <button id="themeBtn" type="button" title="Switch paper / night theme">Night theme</button>
+    <button id="spoilerBtn" type="button" aria-pressed="false" title="Hide story trophy names until earned">Spoiler-safe: OFF</button>
+  </div>
+</header>
+
+<section class="audit" id="auditStrip" aria-label="Audit strip"></section>
+
+<section class="hero">
+  <div class="hero-progress">
+    <div class="big-count"><span id="earnedCount">0</span><span class="of"> / 55 earned</span></div>
+    <div class="bar" role="progressbar" aria-label="Trophies earned"><div class="bar-fill" id="barFill"></div></div>
+    <p class="hero-note" id="heroNote"></p>
+  </div>
+  <div class="grade-chips" id="gradeChips"></div>
+</section>
+
+<nav class="tabs" aria-label="Views">
+  <button type="button" data-view="checklist" class="tab active">Checklist</button>
+  <button type="button" data-view="roadmap" class="tab">Roadmap — all 55</button>
+  <button type="button" data-view="missables" class="tab">Missables (9)</button>
+  <button type="button" data-view="sources" class="tab">Sources &amp; Audit</button>
+  <button type="button" data-view="save" class="tab">Save &amp; Data</button>
+</nav>
+
+<main>
+  <section id="view-checklist" class="view active">
+    <div class="filters" id="filters"></div>
+    <div class="check-wrap">
+      <div class="list-col">
+        <div class="list-tools">
+          <input id="search" type="search" placeholder="Search name, mission or keyword…" aria-label="Search trophies">
+          <select id="gradeFilter" aria-label="Filter by grade">
+            <option value="all">All grades</option>
+            <option value="platinum">Platinum</option>
+            <option value="gold">Gold</option>
+            <option value="silver">Silver</option>
+            <option value="bronze">Bronze</option>
+          </select>
+          <label class="hide-earned"><input id="hideEarned" type="checkbox"> Hide earned</label>
+          <span class="shown" id="shownCount"></span>
+        </div>
+        <ol class="trophy-list" id="trophyList"></ol>
+      </div>
+      <aside class="detail" id="detailPane" aria-label="Trophy guide"></aside>
+    </div>
+  </section>
+
+  <section id="view-roadmap" class="view">
+    <p class="view-intro">The road to <strong>Vice Got a Price!</strong> in five phases — every one of the 55 trophies, in order, with its key fact. Story first, stranger strands second, activities third, collectibles fourth, crime cleanup last.</p>
+    <div class="roadmap" id="roadmap"></div>
+    <p class="view-note">Phases are built from the official descriptions: which chapters and missions, which collectibles and counts, in what order. Counts (42, 14, 18, 52, 9, 8) are the PSN-tracked totals in the cited lists.</p>
+  </section>
+
+  <section id="view-missables" class="view">
+    <p class="view-intro">Nine trophies can be missed or made much harder — each with its reason and a save to keep. Finish the partner trophies and the one-time moments <strong>before</strong> the final mission.</p>
+    <div class="miss-grid" id="missGrid"></div>
+  </section>
+
+  <section id="view-sources" class="view">
+    <p class="view-intro">Every guide in this ledger names its sources, with dates. No guide text is copied from any source — the words are ours; the facts are cited.</p>
+    <table class="matrix" id="sourceMatrix">
+      <thead><tr><th>Source</th><th>Dated</th><th>Covers</th><th>Role</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <div class="audit-detail" id="auditDetail"></div>
+    <p class="honesty"><strong>Honest limit:</strong> GTA VI is unreleased, so no guide here is play-verified. Where a claim goes beyond the official description, the guide says so — “not yet verified in-game” — instead of inventing a location or a step.</p>
+  </section>
+
+  <section id="view-save" class="view">
+    <p class="view-intro">Progress is saved in this browser (localStorage) and never leaves it. Export a backup file, import it back on any device, or reset.</p>
+    <div class="save-row">
+      <button id="exportBtn" type="button">Export progress (.json)</button>
+      <label class="import-btn">Import progress <input id="importFile" type="file" accept="application/json,.json"></label>
+      <button id="resetBtn" type="button">Reset all progress</button>
+    </div>
+    <p class="save-note" id="saveNote"></p>
+    <p class="save-note">Demo views used for the screenshots: <code>?demo=1</code> seeds 13 earned trophies; <code>&amp;open=17</code> opens a guide; <code>&amp;view=roadmap</code>, <code>&amp;filter=missable</code>, <code>&amp;spoiler=1</code> pick the view.</p>
+  </section>
+</main>
+
+<footer>
+  <p>Vice Ledger v2 — an independent, unofficial fan guide. Not affiliated with Rockstar Games or PlayStation. No Rockstar logo, artwork or game screenshot is used anywhere in this guide. Official trophy names &amp; descriptions are shown as PlayStation publishes them; all guide text is written in our own words for this entry. Sources: Exophase &amp; PSNProfiles trophy lists, 18 Nov 2026; Rockstar Games Trailer 2, 6 May 2025.</p>
+</footer>
+<script type="module" src="app.js"></script>
+</body>
+</html>
